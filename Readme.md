@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Goulshat](https://up.htmlacademy.ru/htmlcss/30/user/1466653).
-* Наставник: `Неизвестно`.
+* Наставник: [Сергей Зубов](https://htmlacademy.ru/profile/serj).
 
 ---
 
