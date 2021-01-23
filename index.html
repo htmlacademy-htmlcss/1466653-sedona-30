@@ -5,8 +5,138 @@
     <title>HTML Academy: Седона</title>
   </head>
   <body>
+    <!-- <p>Репозиторий создан для обучения на профессиональном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">HTML и CSS, уровень 1</a>».</p> -->
+    <header>
+      <a>
+        <img src="#" alt="Логотип штата Седона">
+      </a>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">Информация</a>
+          </li>
+          <li>
+            <a href="#">Фото и видео</a>
+          </li>
+          <li>
+            <a href="#">Карта штата</a>
+          </li>
+          <li>
+            <a href="catalog.html">Гостиницы</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <section>
+        <p>Небольшой городок в Аризоне, заслуживающий большего</p> <!-- h1??  -->
+        <h1>Рассмотрим 5 причин, по которым Седона круче чем Гранд Каньон</h1>
+        <ul>
+          <li>
+            <h2>Настоящий городок</h2>
+            <p>Седона - не аттракцион для туристов, там течёт своя жизнь</p>
+            <ul>
+              <li>
+                <h3>Жильё</h3>
+                <p>Рекомендуем пожить пожить в настоящем мотеле, всё как в кино!</p>
+              </li>
+              <li>
+                <h3>Еда</h3>
+                <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
+              </li>
+              <li>
+                <h3>Сувениры</h3>
+                <p>Не только китайского, но и местного производства!</p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h2>Там есть мост дьявола</h2>
+            <p>Да! По нему можно пройти! Если конечно вы осмелитесь</p>
+          </li>
+          <li>
+            <h2>Небольшая площадь</h2>
+            <p>Все достопримечательности находятся близко</p>
+          </li>
+          <li>
+            <h2>Красивая дорога</h2>
+            <p>Ехать из Лас-Вегаса совсем не скучно!</p>
+          </li>
+          <li>
+            <h2>Мало туристов</h2>
+            <p>Большинство едут в Гранд Каньон и толпится там</p>
+          </li>
+        </ul>
+      </section>
 
-    <p>Репозиторий создан для обучения на профессиональном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">HTML и CSS, уровень 1</a>».</p>
+      <section>
+        <h2>Найти гостиницу в Седоне</h2>
+        <p>Заинтересовались?</p> <!-- b? -->
+        <p>Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+        <button type="button">Поиск гостиницы в Седоне</button>
+        <form name="hotel-search" method="get" action="https://echo.htmlacademy.ru/">
+          <p>
+            <label for="hotel-search-checkin"> Дата заезда</label>
+            <input id="hotel-search-checkin" type="date" name="checkin-date">
+          </p>
+         <!--или вариант два - поле выбора даты отдельно-->
+          <p>
+            <label for="hotel-search-checkout"> Дата заезда</label>
+            <input id="hotel-search-checkout" type="text" name="checkout-date" placeholder="4 июля 2017">
+            <span></span> <!--или инпут и как тогда связать name-value -->
+          </p>
+          <p>
+            <label for="hotel-search-adults"></label>
+            <span>-</span>
+            <input id="hotel-search-adults" type="number" name="adults">
+            <span>+</span>
+          </p>
+          <p>
+            <label for="hotel-search-children"></label>
+            <span>-</span>
+            <input id="hotel-search-children" type="number" name="children">
+            <span>+</span>
+          </p>
+          <button type="submit">Найти</button>
+        </form>
+      </section>
 
+      <section>
+        <h2>Карта города Седона</h2>
+        <!--Здесь будет карта-->
+      </section>
+    </main>
+    <footer>
+
+      <section>
+        <h2>Контакты</h2>
+        <p>#visitsedona</p>
+        <address>тел: 
+          <a href="tel:+74956660166">+7 (495) 666-01-66</a>
+        </address>
+      </section>
+
+      <section>
+        <h2>Найти нас в соцсетях</h2>
+        <ul>
+          <li>
+            <a href="#">twitter</a>
+          </li>
+          <li>
+            <a href="#">FB</a>
+          </li>
+          <li>
+            <a href="#">YouTube</a>
+          </li>
+        </ul>
+      </section>
+
+      <p>website by
+        <a href="https://htmlacademy.ru">
+          <img src="#" alt="Логотип HTML-академии">
+        </a>
+      </p>
+    </footer>
   </body>
 </html>
