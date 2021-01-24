@@ -5,7 +5,6 @@
     <title>HTML Academy: Седона</title>
   </head>
   <body>
-    <!-- <p>Репозиторий создан для обучения на профессиональном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">HTML и CSS, уровень 1</a>».</p> -->
     <header>
       <a>
         <img src="#" alt="Логотип штата Седона">
@@ -29,42 +28,49 @@
     </header>
     
     <main>
+      <h1>Добро пожаловать в прекрасную Седону</h1>
       <section>
-        <p>Небольшой городок в Аризоне, заслуживающий большего</p> <!-- h1??  -->
-        <h1>Рассмотрим 5 причин, по которым Седона круче чем Гранд Каньон</h1>
+        <strong>Небольшой городок в Аризоне, заслуживающий большего!</strong> <!-- strong?  -->
+        <h2>Рассмотрим 5 причин, по которым Седона круче чем Гранд Каньон</h2>
         <ul>
           <li>
-            <h2>Настоящий городок</h2>
+            <h3>Настоящий городок</h3>
+            <span>- №1 -</span>
             <p>Седона - не аттракцион для туристов, там течёт своя жизнь</p>
+            <img src="#" alt="Фото улицы города Седона">
             <ul>
               <li>
-                <h3>Жильё</h3>
-                <p>Рекомендуем пожить пожить в настоящем мотеле, всё как в кино!</p>
+                <b>Жильё</b>
+                <p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
               </li>
               <li>
-                <h3>Еда</h3>
+                <b>Еда</b>
                 <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
               </li>
               <li>
-                <h3>Сувениры</h3>
+                <b>Сувениры</b>
                 <p>Не только китайского, но и местного производства!</p>
               </li>
             </ul>
           </li>
           <li>
-            <h2>Там есть мост дьявола</h2>
+            <h3>Там есть мост дьявола</h3>
+            <span>- №2 -</span>
             <p>Да! По нему можно пройти! Если конечно вы осмелитесь</p>
           </li>
           <li>
-            <h2>Небольшая площадь</h2>
+            <h3>Небольшая площадь</h3>
+            <span>- №3 -</span>
             <p>Все достопримечательности находятся близко</p>
           </li>
           <li>
-            <h2>Красивая дорога</h2>
+            <h3>Красивая дорога</h3>
+            <span>- №4 -</span>
             <p>Ехать из Лас-Вегаса совсем не скучно!</p>
           </li>
           <li>
-            <h2>Мало туристов</h2>
+            <h3>Мало туристов</h3>
+            <span>- №5 -</span>
             <p>Большинство едут в Гранд Каньон и толпится там</p>
           </li>
         </ul>
@@ -72,28 +78,28 @@
 
       <section>
         <h2>Найти гостиницу в Седоне</h2>
-        <p>Заинтересовались?</p> <!-- b? -->
+        <b>Заинтересовались?</b>
         <p>Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в Седоне</p>
         <button type="button">Поиск гостиницы в Седоне</button>
         <form name="hotel-search" method="get" action="https://echo.htmlacademy.ru/">
           <p>
             <label for="hotel-search-checkin"> Дата заезда</label>
-            <input id="hotel-search-checkin" type="date" name="checkin-date">
+            <input id="hotel-search-checkin" type="text" name="checkin-date" placeholder="24 апреля 2017">
+            <button type="button"></button>
           </p>
-         <!--или вариант два - поле выбора даты отдельно-->
           <p>
             <label for="hotel-search-checkout"> Дата заезда</label>
             <input id="hotel-search-checkout" type="text" name="checkout-date" placeholder="4 июля 2017">
-            <span></span> <!--или инпут и как тогда связать name-value -->
+            <button type="button"></button>
           </p>
           <p>
-            <label for="hotel-search-adults"></label>
+            <label for="hotel-search-adults">Взрослые:</label>
             <span>-</span>
             <input id="hotel-search-adults" type="number" name="adults">
             <span>+</span>
           </p>
           <p>
-            <label for="hotel-search-children"></label>
+            <label for="hotel-search-children">Дети:</label>
             <span>-</span>
             <input id="hotel-search-children" type="number" name="children">
             <span>+</span>
@@ -118,7 +124,7 @@
       </section>
 
       <section>
-        <h2>Найти нас в соцсетях</h2>
+        <h2>Найти в соцсетях</h2>
         <ul>
           <li>
             <a href="#">twitter</a>
