@@ -1,0 +1,236 @@
+@font-face {
+  font-family: "PT Sans";
+  src: local("PT Sans Bold"),
+       url("../fonts/PTSans-Bold.woff2") format("woff2"),
+       url("../fonts/PTSans-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  src: local("PT Sans"),
+       url("../fonts/PTSans.woff2") format("woff2"),
+       url("../fonts/PTSans.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Variables */
+:root {
+  --basic-black: #000000;
+  --basic-white: #ffffff;
+  --basic-text-color: #333333; /* основной текст */
+  --basic-light: #ebebeb; /* input в активном состоянии --input-active?*/
+  --basic-extra-light: #f2f2f2; /* фон сайта и input в состоянии покоя - --basic-bg */
+  --list-bg: #eeeeee; /* фон списка преимуществ Седоны */
+  --input-hover: #ebebeb; /* фон и границы input при наведении), трудно отличим от #E5E5E5 - граница  */
+  --input-active: #e5e5e5; /* применяется только для границ, фон белый */
+  --dir-arrow: #cacaca; /* значок сортировки вниз-вверх в покое*/
+  --text-active: rgba(250, 250, 250, 0.3); /* текст кнопок, ссылок при нажатии*/
+  
+  --light-blue: #81b3d2;
+  --medium-blue: #669ec0;
+  --dark-blue: #5496bd;
+
+  --light-brown: #766357;
+  --medium-brown: #604e43;
+  --dark-brown: #503e33;
+
+  --partner-logo-active: #bdbbbc; /* цвет лого HTML Академии при нажатии + #231F20 цвет лого Академии в покое - в svg*/
+}
+
+/* Global */
+
+.page-body {
+  min-width: 1280px;
+  margin: 0;
+  padding: 0;
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 700;
+  color: var(--basic-black);
+  text-align: center;
+  text-transform: uppercase;
+  background-color: var(--basic-extra-light);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.main-header {
+  background-color: var(--basic-white);
+}
+
+.navigation-list {
+  list-style: none;
+}
+
+.navigation-item-link {
+  line-height: 26px;
+  text-align: center;
+  color: inherit;
+}
+
+.navigation-item-link:hover,
+.navigation-item-link:focus {
+  color: var(--light-blue);
+}
+
+.navigation-item-link:active {
+  opacity: .3;
+}
+
+.heading {
+  font-size: 21px;
+  line-height: 26px;
+}
+
+.text {
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+.advantages-list {
+  list-style: none;
+}
+
+.advantages-item {
+  background-color: var(--list-bg);
+}
+
+.advantages-item-title {
+  font-size: 21px;
+  line-height: 21px;
+  color: inherit;
+}
+
+.advantages-item-text {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.advantages-item-accent {
+  color: var(--basic-white);
+  background-color: var(--light-blue);
+}
+
+.city-features-list {
+  list-style: none;
+  color: var(--basic-black);
+  background-color: var(--basic-white);
+}
+
+.features-item-house {
+  background-image: url("../img/icons/house.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.features-item-food {
+  background-image: url("../img/icons/burger.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.features-item-present {
+  background-image: url("../img/icons/present.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hotel-search-slogan {
+  font-size: 30px;
+  line-height: 24px; 
+}
+
+.button {
+  font-size: 21px;
+  line-height: 26px;
+  color: var(--basic-white);
+  text-transform: uppercase;
+  border: none;
+}
+
+button:active {
+  color: var(--text-active);
+}
+
+.form-control-button {
+  background-color: var(--light-brown);
+}
+
+.form-control-button:hover,
+.form-control-button:focus {
+  background-color: var(--medium-brown);
+}
+
+.form-control-button:active {
+  background-color: var(--dark-brown);
+}
+
+.date-button {
+  background-image: url("../img/icons/calendar.svgs");
+}
+
+.form-submit-button {
+  background-color: var(--light-blue);
+}
+
+.form-submit-button:hover,
+.form-submit-button:focus {
+  background-color: var(--medium-blue);
+}
+
+.form-submit-button:active {
+  background-color: var(--dark-blue);
+}
+
+.contacts-text {
+  font-size: 21px;
+  line-height: 26px;
+}
+
+.socials-list {
+  list-style: none;
+}
+
+.socials-link {
+  background-color: var(--light-blue);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.socials-link:hover,
+.socials-link:focus {
+  background-color: var(--medium-blue);
+}
+
+.socials-link:active {
+  background-color: var(--dark-blue);
+}
+
+.socials-link:active svg path {
+  fill-opacity: 0.3;
+}
+
+.partner-logo:hover path,
+.partner-logo:focus path {
+  fill: var(--light-blue);
+}
+
+.partner-logo:active path {
+  fill: var(--partner-logo-active);
+}
