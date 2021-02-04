@@ -6,7 +6,7 @@
     <link rel="icon" href="img/favicon/152.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="img/favicon/180.png">
     <link rel="manifest" href="manifest.webmanifest">
-    <link rel="preload" href="fonts/PTSans-Bold.woff2">
+    <link rel="preload" href="fonts/PTSans-Bold.woff2" as="font">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <title>HTML Academy: Седона</title>
@@ -84,32 +84,32 @@
         </ul>
       </section>
 
-      <section>
+      <section class="hotel-search-section">
         <h2 class="visually-hidden">Найти гостиницу в Седоне</h2>
         <b class="hotel-search-slogan">Заинтересовались?</b>
         <p class="text">Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в Седоне</p>
         <button class="button form-control-button" type="button">Поиск гостиницы в Седоне</button>
-        <form name="hotel-search-form" method="get" action="https://echo.htmlacademy.ru/">
+        <form class="hotel-search-form" name="hotel-search-form" method="get" action="https://echo.htmlacademy.ru/">
           <p>
             <label for="hotel-search-checkin"> Дата заезда</label>
-            <input id="hotel-search-checkin" type="text" name="checkin-date" placeholder="24 апреля 2017">
+            <input class="hotel-search-input"  id="hotel-search-checkin" type="text" name="checkin-date" placeholder="24 апреля 2017">
             <button class="date-button" type="button"></button>
           </p>
           <p>
             <label for="hotel-search-checkout"> Дата заезда</label>
-            <input id="hotel-search-checkout" type="text" name="checkout-date" placeholder="4 июля 2017">
+            <input class="hotel-search-input" id="hotel-search-checkout" type="text" name="checkout-date" placeholder="4 июля 2017">
             <button class="date-button" type="button"></button>
           </p>
           <p>
             <label for="hotel-search-adults">Взрослые:</label>
             <button>-</button>
-            <input id="hotel-search-adults" type="number" name="adults">
+            <input class="hotel-search-input" id="hotel-search-adults" type="number" name="adults">
             <button>+</button>
           </p>
           <p>
             <label for="hotel-search-children">Дети:</label>
             <button>-</button>
-            <input id="hotel-search-children" type="number" name="children">
+            <input class="hotel-search-input" id="hotel-search-children" type="number" name="children">
             <button>+</button>
           </p>
           <button class="button form-submit-button" type="submit">Найти</button>

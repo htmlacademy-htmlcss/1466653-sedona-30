@@ -26,7 +26,7 @@
   --basic-bg: #f2f2f2; /* фон сайта и input в состоянии покоя - --basic-bg */
   --list-bg: #eeeeee; /* фон списка преимуществ Седоны */
   --input-hover: #ebebeb; /* фон и границы input при наведении), трудно отличим от #E5E5E5 - граница  */
-  --input-active: #e5e5e5; /* применяется только для границ, фон белый */
+  --input-focus: #e5e5e5; /* применяется только для границ, фон белый */
   --dir-arrow: #cacaca; /* значок сортировки вниз-вверх в покое*/
   --text-active-light: rgba(250, 250, 250, 0.3); /* текст кнопок, ссылок при нажатии*/
   --text-active-grey: rgba(0, 0, 0, 0.7); /* текст кнопок, ссылок при нажатии*/
@@ -81,6 +81,8 @@ img {
 }
 
 .navigation-list {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -111,6 +113,8 @@ img {
 }
 
 .advantages-list {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -135,8 +139,10 @@ img {
 }
 
 .city-features-list {
-  list-style: none;
+  margin: 0;
+  padding: 0;
   color: var(--basic-black);
+  list-style: none;
   background-color: var(--basic-white);
 }
 
@@ -158,6 +164,10 @@ img {
   background-position: center;
 }
 
+.hotel-search-section {
+  background-color: var(--basic-white);
+}
+
 .hotel-search-slogan {
   font-size: 30px;
   line-height: 24px; 
@@ -172,7 +182,7 @@ img {
 }
 
 button:active {
-  color: var(--text-active);
+  color: var(--text-active-light);
 }
 
 .form-control-button {
@@ -186,6 +196,28 @@ button:active {
 
 .form-control-button:active {
   background-color: var(--dark-brown);
+}
+
+.hotel-search-input {
+  font: inherit;
+  background-color: var(--basic-bg);
+  border: 2px solid var(--basic-bg);
+}
+
+.hotel-search-input::placeholder {
+  color: var(--basic-black);
+  text-transform: uppercase;
+}
+
+.hotel-search-input:hover {
+  background-color: var(--input-hover);
+  border: 2px solid var(--input-hover);
+}
+
+.hotel-search-input:focus {
+  background-color: var(--basic-bg);
+  border: 2px solid var(--input-focus);
+  outline: none;
 }
 
 .date-button {
