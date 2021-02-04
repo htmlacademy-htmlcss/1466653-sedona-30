@@ -23,13 +23,13 @@
   --basic-black: #000000;
   --basic-white: #ffffff;
   --basic-text-color: #333333; /* основной текст */
-  --basic-light: #ebebeb; /* input в активном состоянии --input-active?*/
-  --basic-extra-light: #f2f2f2; /* фон сайта и input в состоянии покоя - --basic-bg */
+  --basic-bg: #f2f2f2; /* фон сайта и input в состоянии покоя - --basic-bg */
   --list-bg: #eeeeee; /* фон списка преимуществ Седоны */
   --input-hover: #ebebeb; /* фон и границы input при наведении), трудно отличим от #E5E5E5 - граница  */
   --input-active: #e5e5e5; /* применяется только для границ, фон белый */
   --dir-arrow: #cacaca; /* значок сортировки вниз-вверх в покое*/
-  --text-active: rgba(250, 250, 250, 0.3); /* текст кнопок, ссылок при нажатии*/
+  --text-active-light: rgba(250, 250, 250, 0.3); /* текст кнопок, ссылок при нажатии*/
+  --text-active-grey: rgba(0, 0, 0, 0.7); /* текст кнопок, ссылок при нажатии*/
   
   --light-blue: #81b3d2;
   --medium-blue: #669ec0;
@@ -45,7 +45,7 @@
 /* Global */
 
 .page-body {
-  min-width: 1280px;
+  min-width: 1200px;
   margin: 0;
   padding: 0;
   font-family: "PT Sans", Arial, sans-serif;
@@ -55,7 +55,7 @@
   color: var(--basic-black);
   text-align: center;
   text-transform: uppercase;
-  background-color: var(--basic-extra-light);
+  background-color: var(--basic-bg);
 }
 
 a {
@@ -66,6 +66,14 @@ a {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
 }
 
 .main-header {
@@ -88,7 +96,7 @@ img {
 }
 
 .navigation-item-link:active {
-  opacity: .3;
+  color: var(--text-active-grey);
 }
 
 .heading {
