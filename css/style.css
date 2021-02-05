@@ -110,6 +110,7 @@ img {
   font-size: 14px;
   line-height: 26px;
   font-weight: 400;
+  color: var(--basic-text-color);
 }
 
 .advantages-list {
@@ -131,6 +132,7 @@ img {
 .advantages-item-text {
   font-size: 14px;
   font-weight: 400;
+  color: var(--basic-text-color);
 }
 
 .advantages-item-accent {
