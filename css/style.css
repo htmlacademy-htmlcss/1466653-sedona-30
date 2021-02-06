@@ -25,11 +25,12 @@
   --basic-text-color: #333333; /* основной текст */
   --basic-bg: #f2f2f2; /* фон сайта и input в состоянии покоя - --basic-bg */
   --list-bg: #eeeeee; /* фон списка преимуществ Седоны */
+ /* --hero-bg: #E2F0F9;  фоновый цвет для welcome-блок главной страницы*/
   --input-hover: #ebebeb; /* фон и границы input при наведении), трудно отличим от #E5E5E5 - граница  */
   --input-focus: #e5e5e5; /* применяется только для границ, фон белый */
   --dir-arrow: #cacaca; /* значок сортировки вниз-вверх в покое*/
   --text-active-light: rgba(250, 250, 250, 0.3); /* текст кнопок, ссылок при нажатии*/
-  --text-active-grey: rgba(0, 0, 0, 0.7); /* текст кнопок, ссылок при нажатии*/
+  --text-active-grey: rgba(0, 0, 0, 0.3); /* текст кнопок, ссылок при нажатии*/
   
   --light-blue: #81b3d2;
   --medium-blue: #669ec0;
@@ -86,20 +87,30 @@ img {
   list-style: none;
 }
 
-.navigation-item-link {
+.navigation-link {
   line-height: 26px;
   text-align: center;
   color: inherit;
 }
 
-.navigation-item-link:hover,
-.navigation-item-link:focus {
+.navigation-link:hover,
+.navigation-link:focus {
   color: var(--light-blue);
 }
 
-.navigation-item-link:active {
+.navigation-link:active {
   color: var(--text-active-grey);
 }
+
+.navigation-link-checked {
+  color: var(--light-brown);
+}
+
+/* .hero {
+  background-color: var(--hero-bg);
+  background-image: url("../img/background-index.jpg");
+  background-size: cover;
+} */
 
 .heading {
   font-size: 21px;
@@ -121,23 +132,27 @@ img {
 
 .advantages-item {
   background-color: var(--list-bg);
-}
-
-.advantages-item-title {
-  font-size: 21px;
-  line-height: 21px;
-  color: inherit;
-}
-
-.advantages-item-text {
-  font-size: 14px;
-  font-weight: 400;
   color: var(--basic-text-color);
 }
 
 .advantages-item-accent {
   color: var(--basic-white);
   background-color: var(--light-blue);
+}
+
+.advantages-title {
+  font-size: 21px;
+  line-height: 21px;
+  color: var(--basic-black);
+}
+
+.advantages-item-accent .advantages-title {
+  color: inherit;
+}
+
+.advantages-text {
+  font-weight: 400;
+  color: inherit;
 }
 
 .city-features-list {
@@ -222,7 +237,7 @@ button:active {
   outline: none;
 }
 
-.date-button {
+.calendar-button {
   background-image: url("../img/icons/calendar.svgs");
 }
 
