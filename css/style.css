@@ -25,7 +25,7 @@
   --basic-text-color: #333333; /* основной текст */
   --basic-bg: #f2f2f2; /* фон сайта и input в состоянии покоя - --basic-bg */
   --list-bg: #eeeeee; /* фон списка преимуществ Седоны */
- /* --hero-bg: #E2F0F9;  фоновый цвет для welcome-блок главной страницы*/
+  --hero-bg: #E2F0F9;  /* фоновый цвет для welcome-блок главной страницы*/
   --input-hover: #ebebeb; /* фон и границы input при наведении), трудно отличим от #E5E5E5 - граница  */
   --input-focus: #e5e5e5; /* применяется только для границ, фон белый */
   --dir-arrow: #cacaca; /* значок сортировки вниз-вверх в покое*/
@@ -77,6 +77,8 @@ img {
   margin: -1px;
 }
 
+/* Main header */
+
 .main-header {
   background-color: var(--basic-white);
 }
@@ -106,11 +108,14 @@ img {
   color: var(--light-brown);
 }
 
-/* .hero {
+/* Welcome section*/
+
+.hero {
+  height: 300px; /*временный параметр для проверки  фона*/
   background-color: var(--hero-bg);
-  background-image: url("../img/background-index.jpg");
-  background-size: cover;
-} */
+  background: url("../img/welcome.svg") center/contain no-repeat,
+              url("../img/background-index.jpg") center/cover no-repeat;
+}
 
 .heading {
   font-size: 21px;
@@ -155,6 +160,11 @@ img {
   color: inherit;
 }
 
+.advantages-item-accent img {
+  width: 800px;
+  height: 256px;
+}
+
 .city-features-list {
   margin: 0;
   padding: 0;
@@ -190,6 +200,8 @@ img {
   line-height: 24px; 
 }
 
+/* Buttons*/ 
+
 .button {
   font-size: 21px;
   line-height: 26px;
@@ -214,6 +226,8 @@ button:active {
 .form-control-button:active {
   background-color: var(--dark-brown);
 }
+
+/* Hotel search form*/
 
 .hotel-search-input {
   font: inherit;
@@ -253,6 +267,8 @@ button:active {
 .form-submit-button:active {
   background-color: var(--dark-blue);
 }
+
+/* Footer */
 
 .contacts-text {
   font-size: 21px;
