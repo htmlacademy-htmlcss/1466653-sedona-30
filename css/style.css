@@ -24,6 +24,7 @@
   --basic-white: #ffffff;
   --basic-text-color: #333333; /* основной текст */
   --basic-bg: #f2f2f2; /* фон сайта и input в состоянии покоя - --basic-bg */
+  --page-shadow: rgba(0, 1, 1, 0.2); /*тень от сайт на body*/
   --list-bg: #eeeeee; /* фон списка преимуществ Седоны */
   --hero-bg: #E2F0F9;  /* фоновый цвет для welcome-блок главной страницы*/
   --input-hover: #ebebeb; /* фон и границы input при наведении), трудно отличим от #E5E5E5 - граница  */
@@ -40,10 +41,15 @@
   --medium-brown: #604e43;
   --dark-brown: #503e33;
 
+  --partner-logo: #231F20; /*цвет лого академии в покое*/
   --partner-logo-active: #bdbbbc; /* цвет лого HTML Академии при нажатии + #231F20 цвет лого Академии в покое - в svg*/
 }
 
 /* Global */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
 .page-body {
   min-width: 1200px;
@@ -77,17 +83,24 @@ img {
   margin: -1px;
 }
 
-/* Main header */
-
-.main-header {
-  background-color: var(--basic-white);
-}
-
-.navigation-list {
+.clear-list {
   margin: 0;
   padding: 0;
   list-style: none;
 }
+
+/* Main header */
+
+.main-header {
+  background-color: var(--basic-white);
+  box-shadow: 0px 5px 15px var(--page-shadow);
+}
+
+/* .navigation-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+} */
 
 .navigation-link {
   line-height: 26px;
@@ -104,17 +117,19 @@ img {
   color: var(--text-active-grey);
 }
 
-.navigation-link-checked {
+.navigation-link-current {
   color: var(--light-brown);
 }
 
 /* Welcome section*/
+.main-content {
+  box-shadow: 0px 5px 15px var(--page-shadow);
+}
 
 .hero {
   height: 300px; /*временный параметр для проверки  фона*/
   background-color: var(--hero-bg);
-  background: url("../img/welcome.svg") center/contain no-repeat,
-              url("../img/background-index.jpg") center/cover no-repeat;
+  background: url("../img/background-index.jpg") center/cover no-repeat;
 }
 
 .heading {
@@ -129,11 +144,11 @@ img {
   color: var(--basic-text-color);
 }
 
-.advantages-list {
+/* .advantages-list {
   margin: 0;
   padding: 0;
   list-style: none;
-}
+} */
 
 .advantages-item {
   background-color: var(--list-bg);
@@ -147,7 +162,6 @@ img {
 
 .advantages-title {
   font-size: 21px;
-  line-height: 21px;
   color: var(--basic-black);
 }
 
@@ -166,29 +180,30 @@ img {
 }
 
 .city-features-list {
-  margin: 0;
-  padding: 0;
-  color: var(--basic-black);
-  list-style: none;
+  color: var(--basic-text-color);
   background-color: var(--basic-white);
+}
+
+.features-item {
+  background-repeat: no-repeat;
+  background-position: 50% 25%;
 }
 
 .features-item-house {
   background-image: url("../img/icons/house.svg");
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .features-item-food {
   background-image: url("../img/icons/burger.svg");
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .features-item-present {
   background-image: url("../img/icons/present.svg");
-  background-repeat: no-repeat;
-  background-position: center;
+}
+
+.features-title {
+  font-size: 21px;
+  color: var(--basic-black);
 }
 
 .hotel-search-section {
@@ -208,9 +223,10 @@ img {
   color: var(--basic-white);
   text-transform: uppercase;
   border: none;
+  cursor: pointer;
 }
 
-button:active {
+.button:active {
   color: var(--text-active-light);
 }
 
@@ -252,7 +268,7 @@ button:active {
 }
 
 .calendar-button {
-  background-image: url("../img/icons/calendar.svgs");
+  background-image: url("../img/icons/calendar.svg");
 }
 
 .form-submit-button {
@@ -270,13 +286,22 @@ button:active {
 
 /* Footer */
 
+.main-footer {
+  box-shadow: 0px 5px 15px var(--page-shadow);
+}
+
 .contacts-text {
   font-size: 21px;
   line-height: 26px;
 }
 
-.socials-list {
-  list-style: none;
+.tel-link:hover,
+.tel-link:focus {
+  color: var(--light-blue);
+}
+
+.tel-link:active {
+  color: var(--text-active-grey);
 }
 
 .socials-link {
@@ -284,6 +309,10 @@ button:active {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.socials-link svg {
+  fill: var(--basic-white);
 }
 
 .socials-link:hover,
@@ -295,15 +324,19 @@ button:active {
   background-color: var(--dark-blue);
 }
 
-.socials-link:active svg path {
+.socials-link:active svg {
   fill-opacity: 0.3;
 }
 
-.partner-logo:hover path,
-.partner-logo:focus path {
+.partner-logo {
+  fill: var(--partner-logo);
+}
+
+.partner-logo:hover,
+.partner-logo:focus {
   fill: var(--light-blue);
 }
 
-.partner-logo:active path {
+.partner-logo:active {
   fill: var(--partner-logo-active);
 }
