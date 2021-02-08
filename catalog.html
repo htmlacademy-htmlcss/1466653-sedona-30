@@ -13,13 +13,13 @@
   <link rel="stylesheet" href="css/catalog.css">
   <title>Гостиницы в Седоне</title>
 </head>
-<body class="page-body inner-page">
+<body class="page-body catalog-page">
   <header class="main-header">
     <a href="index.html">
       <img src="img/logo/sedona.svg" width="138" height="70" alt="Логотип города Седона">
     </a>
     <nav>
-      <ul class="navigation-list">
+      <ul class="clear-list navigation-list">
         <li>
           <a class="navigation-link" href="#">Информация</a>
         </li>
@@ -43,9 +43,9 @@
       <form action="https://echo.htmlacademy.ru/" method="GET">
         <fieldset>
           <legend class="filters-legend">Инфраструктура</legend>
-          <ul class="filters-list">
+          <ul class="clear-list filters-list">
             <li>
-              <label class="filters-label"> <!-- разложить отдельно для стилизации? -->
+              <label class="filters-label"> <!-- ?? разложить отдельно для стилизации? -->
                 <input class="filters-checkbox" type="checkbox" name="filter-amenities" value="pool" checked> Бассейн
               </label>
             </li>
@@ -64,7 +64,7 @@
 
         <fieldset>
           <legend class="filters-legend">Тип жилья</legend>
-          <ul class="filters-list">
+          <ul class="clear-list filters-list">
             <li>
               <label class="filters-label">
                 <input class="filters-checkbox" type="checkbox" name="filter-accomodation" value="hotel" checked> Гостиница
@@ -100,9 +100,9 @@
         <span>3</span>
       </b>
       <p class="sorting-text">Сортировка:</p>
-      <ul class="sorting-list">
+      <ul class="clear-list sorting-list">
         <li>
-          <a class="sorting-link sorting-link-checked">по цене</a>
+          <a class="sorting-link sorting-link-selected">по цене</a>
         </li>
         <li>
           <a class="sorting-link" href="#">по типу</a>
@@ -117,7 +117,7 @@
 
     <section class="result-section">
       <h2 class="visually-hidden">Результаты поиска: жилье в Седоне</h2>
-      <ul class="result-list">
+      <ul class="clear-list result-list">
         <li>
           <article>
             <h3 class="result-title">Amara Resort & Spa</h3>
@@ -144,7 +144,7 @@
             </p>
             <a class="button result-link" href="#">Подробнее</a>
             <button class="button result-button" type="button">Забронировать</button>
-            <p>Рейтинг: 8,9</p>
+            <p class="result-rating">Рейтинг: 8,9</p>
           </article>
         </li>
 
@@ -159,7 +159,7 @@
             </p>
             <a class="button result-link" href="#">Подробнее</a>
             <button class="button result-button" type="button">Забронировать</button>
-            <p>Рейтинг: 9,2</p>
+            <p class="result-rating">Рейтинг: 9,2</p>
           </article>
         </li>
       </ul>
