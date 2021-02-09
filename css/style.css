@@ -32,7 +32,9 @@
   --dir-arrow: #cacaca; /* значок сортировки вниз-вверх в покое*/
   --text-active-light: rgba(250, 250, 250, 0.3); /* текст кнопок, ссылок при нажатии*/
   --text-active-grey: rgba(0, 0, 0, 0.3); /* текст кнопок, ссылок при нажатии*/
-  
+  --checkbox-disabled: #6a6a6a;
+  --rating-text: #666666;
+
   --light-blue: #81b3d2;
   --medium-blue: #669ec0;
   --dark-blue: #5496bd;
@@ -219,6 +221,7 @@ img {
 
 .button {
   font-size: 21px;
+  font-weight: 700;
   line-height: 26px;
   color: var(--basic-white);
   text-transform: uppercase;
@@ -230,17 +233,38 @@ img {
   color: var(--text-active-light);
 }
 
-.form-control-button {
+.button:focus {
+  outline: none;
+}
+
+.button-brown {
   background-color: var(--light-brown);
 }
 
-.form-control-button:hover,
-.form-control-button:focus {
+.button-brown:hover,
+.button-brown:focus {
   background-color: var(--medium-brown);
 }
 
-.form-control-button:active {
+.button-brown:active {
   background-color: var(--dark-brown);
+}
+
+.button-blue {
+  background-color: var(--light-blue);
+}
+
+.button-blue {
+  background-color: var(--light-blue);
+}
+
+.button-blue:hover,
+.button-blue:focus {
+  background-color: var(--medium-blue);
+}
+
+.button-blue:active {
+  background-color: var(--dark-blue);
 }
 
 /* Hotel search form*/
@@ -282,6 +306,148 @@ img {
 
 .form-submit-button:active {
   background-color: var(--dark-blue);
+}
+
+/* Hotel Filters */
+
+.filters-section {
+  color: var(--basic-white);
+  background-color: var(--light-blue);
+  background-image: url("../img/background-catalog.jpg");
+  background-size: cover;
+}
+
+.filters-legend {
+  font-size: 16px;
+  text-align: left;
+}
+
+.filters-list {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  list-style: none;
+}
+
+.filters-label {
+  font-weight: 400;
+}
+
+/* ??
+ .filters-checkbox:disabled + .filters-label {
+  color: var(--checkbox-disabled)
+} */
+
+.filters-input {
+  color: inherit;
+  background-color: transparent;
+  border: 2px solid var(--basic-white); /* убрать? и общий border для двух полей*/
+} 
+
+.filters-input::placeholder {
+  color: var(--basic-white);
+  text-transform: uppercase;
+}
+
+.filters-submit-button {
+  color: var(--basic-whiter);
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 2px solid var(--basic-white);
+}
+
+.filters-submit-button:hover,
+.filters-submit-button:focus,
+.filters-submit-button:active {
+  color: var(--basic-black);
+  background-color: var(--basic-white);
+}
+
+/* Hotels sorting */
+
+.sorting-section {
+  text-align: left;
+}
+
+.sorting-text {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.sorting-list {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  list-style: none;
+}
+
+.sorting-link {
+  color: var(--text-active-grey);
+}
+
+.sorting-link-selected {
+  color: var(--light-blue);
+}
+
+.sorting-link:hover,
+.sorting-link:focus {
+  color: var(--light-blue);
+  border-bottom: 1px dashed var(--light-blue);
+}
+
+.sorting-link:active {
+  color: var(--basic-black);
+  border-bottom: none;
+}
+
+/* Hotel Results*/
+
+.result-section {
+  text-align: left;
+}
+
+.result-list {
+  list-style: none;
+}
+
+.result-title {
+  font-size: 21px;
+  line-height: 26px;
+}
+
+.result-title:hover,
+.result-title:focus {
+  color: var(--light-blue);
+}
+
+.result-title:active {
+  color: var(--text-active-grey);
+}
+
+.result-list img {
+  width: 135px;
+  height: 90px;
+}
+
+.result-text {
+  font-weight: 400;
+}
+
+/* .result-link {
+
+}
+
+.result-button {
+
+} */
+
+.result-rating {
+  font-weight: 400;
+  text-align: center;
+  color: var(--rating-text);
 }
 
 /* Footer */
