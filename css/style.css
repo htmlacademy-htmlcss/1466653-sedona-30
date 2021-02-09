@@ -333,15 +333,10 @@ img {
   font-weight: 400;
 }
 
-/* ??
- .filters-checkbox:disabled + .filters-label {
-  color: var(--checkbox-disabled)
-} */
-
 .filters-input {
   color: inherit;
   background-color: transparent;
-  border: 2px solid var(--basic-white); /* убрать? и общий border для двух полей*/
+  border: none;
 } 
 
 .filters-input::placeholder {
