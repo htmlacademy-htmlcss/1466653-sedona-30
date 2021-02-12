@@ -113,7 +113,7 @@ img {
   background-color: var(--basic-white);
 }
 
-/* Гриды */
+/* Navigation Grids */
 
 .main-header-logo {
   position: absolute;
@@ -420,6 +420,15 @@ img {
   background-color: var(--dark-blue);
 }
 
+/* Hotels Grid*/
+
+
+.catalog-content {
+  /* лишнее??display: grid;
+  grid-template-rows: min-content min-content 1fr; */
+  background-color: var(--basic-white);
+}
+
 /* Hotel Filters */
 
 .filters-section {
@@ -473,10 +482,14 @@ img {
 /* Hotels sorting */
 
 .sorting-section {
+  display: grid;
+  grid-template-columns: 210px 1fr min-content;
+  padding: 30px 70px;
   text-align: left;
 }
 
 .sorting-text {
+  margin: 0;
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;
@@ -510,17 +523,44 @@ img {
   border-bottom: none;
 }
 
+.dir-link {
+  display: inline-block;
+  width: 11px;
+  height: 10px;
+}
 /* Hotel Results*/
 
 .result-section {
+  padding: 30px 70px;
   text-align: left;
 }
 
-.result-list {
-  list-style: none;
+/* .result-list {
+  
+} */
+
+.result-item {
+  display: grid;
+  grid-template-columns: 135px  1fr auto;
+  grid-template-areas: 
+    "img title stars"
+    "img desc ."
+    "img btn rating";
+  column-gap: 30px;
+  row-gap: 10px;
+  margin-bottom: 30px;
+}
+
+.result-item img {
+  grid-area: img;
+  width: 135px;
+  height: 90px;
+  align-self: center;
 }
 
 .result-title {
+  grid-area: title;
+  margin: 0;
   font-size: 21px;
   line-height: 26px;
 }
@@ -534,24 +574,37 @@ img {
   color: var(--text-active-grey);
 }
 
-.result-list img {
-  width: 135px;
-  height: 90px;
+.result-stars {
+  grid-area: stars;
+  justify-self: flex-end;
 }
 
 .result-text {
+  grid-area: desc;
+  margin: 0;
   font-weight: 400;
 }
 
-/* .result-link {
+.result-buttons-wrap {
+  grid-area: btn;
+}
 
+.result-link {
+  padding: 7px 17px;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 .result-button {
-
-} */
+  padding: 5px 17px;
+  font-size: inherit;
+  line-height: inherit;
+}
 
 .result-rating {
+  grid-area: rating;
+  justify-self: flex-end;
+  margin: 0;
   font-weight: 400;
   text-align: center;
   color: var(--rating-text);
