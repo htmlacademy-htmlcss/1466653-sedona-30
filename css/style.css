@@ -30,6 +30,7 @@
   --input-hover: #ebebeb; /* фон и границы input при наведении), трудно отличим от #E5E5E5 - граница  */
   --input-focus: #e5e5e5; /* применяется только для границ, фон белый */
   --dir-arrow: #cacaca; /* значок сортировки вниз-вверх в покое*/
+  --button-sign: #a9a9a9; /* цвет + и - в кнопках формы*/
   --text-active-light: rgba(250, 250, 250, 0.3); /* текст кнопок, ссылок при нажатии*/
   --text-active-grey: rgba(0, 0, 0, 0.3); /* текст кнопок, ссылок при нажатии*/
   --checkbox-disabled: #6a6a6a;
@@ -110,12 +111,6 @@ img {
   box-shadow: 0px 5px 15px var(--page-shadow);
 }
 
-/* .main-header {
-  background-color: var(--basic-white);
-} */
-
-/* Navigation Grids */
-
 .main-header-logo {
   position: absolute;
   top: 0;
@@ -123,6 +118,8 @@ img {
   /* transform: translate(-50%); */
 }
 
+/* Navigation Grids */
+/*
 .navigation-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -130,23 +127,51 @@ img {
   align-items: center;
 }
 
-.navigation-item-media {
+.navigation-item:nth-child(4n+2) {
   justify-self: left;
 }
 
-.navigation-item-map {
+.navigation-item:nth-child(4n+3) {
   justify-self: right;
-}
+}*/
 
-/* Флексы
+/* Меню на флексах */
 
 .navigation-list {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  min-height: 56px;
+  align-items: center;
+  padding-right: 70px;
+  padding-left: 70px;
 }
-...
-*/
 
+.navigation-item {
+  width: 210px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.navigation-item:nth-child(4n+1),
+.navigation-item:nth-child(4n+2) {
+  text-align: left;
+}
+
+.navigation-item:nth-child(4n+3),
+.navigation-item:nth-child(4n) {
+  text-align: right;
+} 
+
+.navigation-item:nth-child(4n+2) {
+  margin-right: auto;
+}
+
+ /*------------ */
+
+.navigation-item {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
 
 .navigation-link {
   line-height: 26px;
@@ -360,7 +385,6 @@ img {
 
 .hotel-search-section {
   padding-top: 55px;
-  /* background-color: var(--basic-white); */
 }
 
 .hotel-search-slogan {
@@ -378,11 +402,56 @@ img {
   padding-right: 350px;
 }
 
-.form-control-button {
+.form-display-button {
   padding: 30px 125px;
+  width: 568px;
+}
+
+.search-form-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 568px;
+  padding: 55px;
+  /* outline: 2px solid tomato;  временнная обводка */
+}
+
+.hotel-search-paragraph {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.hotel-search-adults {
+  width: 223px;
+  margin-bottom: 0;
+}
+
+.hotel-search-children {
+  width: 180px;
+  margin-bottom: 0;
+}
+
+.hotel-search-label {
+  margin-right: auto;
+}
+
+.hotel-search-adults .hotel-search-input,
+.hotel-search-children .hotel-search-input {
+  width: 38px;
+  padding-right: 7px;
+  padding-left: 7px;
+  text-align: center;
 }
 
 .hotel-search-input {
+  display: inline-block;
+  padding: 7px 13px;
+  width: 310px;
   font: inherit;
   background-color: var(--basic-bg);
   border: 2px solid var(--basic-bg);
@@ -404,24 +473,38 @@ img {
   outline: none;
 }
 
+.hotel-search-controls-button {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 38px;
+  height: 38px;
+  border: none;
+  background-color: var(--basic-bg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .calendar-button {
   background-image: url("../img/icons/calendar.svg");
 }
 
-.form-submit-button {
-  background-color: var(--light-blue);
+.hotel-search-controls-button:hover {
+  background-color: var(--input-hover);
+  border: 2px solid var(--input-hover);
 }
 
-.form-submit-button:hover,
-.form-submit-button:focus {
-  background-color: var(--medium-blue);
+.hotel-search-controls-button:focus {
+  background-color: var(--basic-bg);
+  border: 2px solid var(--input-focus);
+  /* outline: none; */
 }
 
-.form-submit-button:active {
-  background-color: var(--dark-blue);
+.hotel-search-submit-button {
+  width: 100%;
+  margin-top: 55px;
+  padding: 16px;
 }
-
-/* Hotels Grid*/
 
 /* Hotel Filters */
 
@@ -521,7 +604,7 @@ img {
   width: 11px;
   height: 10px;
 }
-/* Hotel Results*/
+/* Hotel Results -  Grids */
 
 .result-section {
   padding: 30px 70px;
@@ -629,11 +712,27 @@ img {
   color: var(--text-active-grey);
 }
 
+.socials-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .socials-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 48px;
+  margin-left: 6px;
   background-color: var(--light-blue);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.socails-link:last-child {
+  margin-left: 0;
 }
 
 .socials-link svg {
@@ -651,6 +750,16 @@ img {
 
 .socials-link:active svg {
   fill-opacity: 0.3;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.partner-logo-link {
+  margin-left: 8px;
 }
 
 .partner-logo {
