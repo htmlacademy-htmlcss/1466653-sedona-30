@@ -527,14 +527,15 @@ img {
 }
 
 .filters-col-wrap {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; */
   margin-left: auto;
 }
 
 .filters-col-wrap .filters-fieldset {
   margin-right: 0;
+  margin-bottom: 25px;
 }
 
 .filters-legend {
@@ -566,7 +567,6 @@ img {
 
 .filters-price-wrap {
   display: flex;
-  flex-wrap: nowrap;
   justify-content: space-between;
   border: 2px solid var(--basic-white);
 }
