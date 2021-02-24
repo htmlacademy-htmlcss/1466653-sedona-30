@@ -22,17 +22,23 @@
 :root {
   --basic-black: #000000;
   --basic-white: #ffffff;
-  --basic-text-color: #333333; /* основной текст */
+
+  --page-shadow: rgba(0, 1, 1, 0.2); /*тень от сайта на body*/
+  --form-shadow: rgba(0, 1, 1, 0.15); /* тень от формы на сайт*/
+
   --basic-bg: #f2f2f2; /* фон сайта и input в состоянии покоя - --basic-bg */
-  --page-shadow: rgba(0, 1, 1, 0.2); /*тень от сайт на body*/
   --list-bg: #eeeeee; /* фон списка преимуществ Седоны */
   --hero-bg: #E2F0F9;  /* фоновый цвет для welcome-блок главной страницы*/
+  --footer-bg: rgba(255, 255, 255, 0.9); /* полупрозрачный фон футера главной страницы*/
+
+  --basic-text-color: #333333; /* основной текст */
+  --text-active-grey: rgba(0, 0, 0, 0.3); /* текст кнопок, ссылок при нажатии*/
+  --text-active-light: rgba(250, 250, 250, 0.3); /* текст кнопок, ссылок при нажатии*/
   --input-hover: #ebebeb; /* фон и границы input при наведении), трудно отличим от #E5E5E5 - граница  */
   --input-focus: #e5e5e5; /* применяется только для границ, фон белый */
   --dir-arrow: #cacaca; /* значок сортировки вниз-вверх в покое*/
   --button-sign: #a9a9a9; /* цвет + и - в кнопках формы*/
-  --text-active-light: rgba(250, 250, 250, 0.3); /* текст кнопок, ссылок при нажатии*/
-  --text-active-grey: rgba(0, 0, 0, 0.3); /* текст кнопок, ссылок при нажатии*/
+
   --checkbox-disabled: #6a6a6a;
   --rating-text: #666666;
 
@@ -45,7 +51,7 @@
   --dark-brown: #503e33;
 
   --partner-logo: #231F20; /*цвет лого академии в покое*/
-  --partner-logo-active: #bdbbbc; /* цвет лого HTML Академии при нажатии + #231F20 цвет лого Академии в покое - в svg*/
+  --partner-logo-active: #bdbbbc; /* цвет лого HTML Академии при нажатии */
 }
 
 /* Global */
@@ -107,6 +113,7 @@ img {
 /* Main header */
 
 .page-wrap {
+  position: relative;
   background-color: var(--basic-white);
   box-shadow: 0px 5px 15px var(--page-shadow);
 }
@@ -115,16 +122,21 @@ img {
   position: absolute;
   top: 0;
   left: 50%;
-  /* transform: translate(-50%); */
+  transform: translateX(-50%);
 }
 
 /* Navigation Grids */
-/*
+
 .navigation-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   min-height: 56px;
   align-items: center;
+}
+
+.navigation-item:nth-child(4n+1) {
+  justify-self: left;
+  padding-left: 72px;
 }
 
 .navigation-item:nth-child(4n+2) {
@@ -133,10 +145,15 @@ img {
 
 .navigation-item:nth-child(4n+3) {
   justify-self: right;
-}*/
+}
+
+.navigation-item:nth-child(4n) {
+  justify-self: right;
+  padding-right: 72px;
+}
 
 /* Меню на флексах */
-
+/*
 .navigation-list {
   display: flex;
   flex-wrap: wrap;
@@ -197,17 +214,22 @@ img {
 .hero {
   margin-top: 0;
   margin-bottom: 0;
-  height: 510px;
+  height: 508px;
   background-color: var(--hero-bg);
-  background: url("../img/background-index.jpg") center/cover no-repeat;
+  background-image: 
+    url("../img/shape.svg"),
+    url("../img/background-index.jpg");
+  background-position: 0 100.2%, center; 
+  background-size: contain, contain;
+  background-repeat: no-repeat, no-repeat;
 }
 
 .welcome-phrase {
-  padding-top: 75px;
+  padding-top: 76px;
 }
 
 .advantages-section {
-  padding-top: 40px; 
+  padding-top: 44px; 
 }
 
 .heading {
@@ -217,9 +239,10 @@ img {
 
 .advantages-section-heading {
   display: inline-block;
+  vertical-align: middle;
   max-width: 550px;
   margin: 0 auto;
-  margin-bottom: 30px;
+  margin-bottom: 31px;
 }
 
 .text {
@@ -232,7 +255,8 @@ img {
 .advantages-list {
   display: grid;
   grid-template-columns: 400px 400px 400px;
-  margin-top: 45px;
+  margin-top: 51px;
+  /* округлить до 50px */
 }
 
 .advantages-item {
@@ -242,12 +266,16 @@ img {
 
 .advantages-card {
   min-height: 256px;
-  padding-top: 35px;
+  padding-top: 48px;
   padding-bottom: 40px;
 }
 
+.devils-brigde-card  {
+  padding-top: 51px;
+}
+
 .advantages-title {
-  max-width: 130px;
+  max-width: 160px;
   margin: 0 auto;
   margin-bottom: 25px;
   font-size: 21px;
@@ -255,9 +283,10 @@ img {
 }
 
 .advantages-text {
-  margin-top: 25px;
-  padding-left: 40px;
-  padding-right: 40px;
+  margin-top: 23px;
+  margin-bottom: 0;
+  padding-left: 48px;
+  padding-right: 48px;
   font-weight: 400;
   color: inherit;
 }
@@ -310,7 +339,7 @@ img {
   padding-top: 160px;
   padding-bottom: 50px;
   background-repeat: no-repeat;
-  background-position: 50% 25%;
+  background-position: 50% 24%;
 }
 
 .features-item-house {
@@ -323,6 +352,7 @@ img {
 
 .features-item-present {
   background-image: url("../img/icons/present.svg");
+  background-position: 50% 22%;
 }
 
 .features-title {
@@ -381,40 +411,56 @@ img {
   background-color: var(--dark-blue);
 }
 
-/* Hotel search form*/
+/* Hotel search section */
 
 .hotel-search-section {
-  padding-top: 55px;
+  padding-top: 58px;
 }
 
 .hotel-search-slogan {
   display: inline-block;
-  margin-bottom: 35px;
+  vertical-align: middle;
+  margin-bottom: 30px;
+  padding-right: 10px;
   font-size: 30px;
   line-height: 24px;
 }
 
 .hotel-search-text {
   display: inline-block;
+  vertical-align: middle;
   margin-top: 0;
-  margin-bottom: 25px;
+  margin-bottom: 41px;
   padding-left: 350px;
   padding-right: 350px;
 }
 
 .form-display-button {
-  padding: 30px 125px;
+  padding: 31px 125px 29px;
   width: 568px;
+}
+
+/* Hotel search form */
+.hotel-search-form {
+ position: relative;
+ margin: 0 auto;
+ width: 568px;
+}
+
+.search-form-wrap{
+  position: absolute;
+  /* transform: translateY(-100%);
+  z-index: -1; ??? */
 }
 
 .search-form-wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0 auto;
-  width: 568px;
   padding: 55px;
-  /* outline: 2px solid tomato;  временнная обводка */
+  background-color: var(--basic-white);
+  box-shadow: 0px 7px 15px var(--form-shadow);
+ /* outline: 2px solid tomato; */
 }
 
 .hotel-search-paragraph {
@@ -423,11 +469,11 @@ img {
   width: 100%;
   align-items: center;
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 29px;
 }
 
 .hotel-search-adults {
-  width: 223px;
+  width: 225px;
   margin-bottom: 0;
 }
 
@@ -437,7 +483,20 @@ img {
 }
 
 .hotel-search-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   margin-right: auto;
+}
+
+.hotel-search-input {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 6px 10px 7px;
+  width: 308px;
+  font: inherit;
+  background-color: var(--basic-bg);
+  border: 2px solid var(--basic-bg);
 }
 
 .hotel-search-adults .hotel-search-input,
@@ -446,15 +505,6 @@ img {
   padding-right: 7px;
   padding-left: 7px;
   text-align: center;
-}
-
-.hotel-search-input {
-  display: inline-block;
-  padding: 7px 13px;
-  width: 310px;
-  font: inherit;
-  background-color: var(--basic-bg);
-  border: 2px solid var(--basic-bg);
 }
 
 .hotel-search-input::placeholder {
@@ -474,19 +524,15 @@ img {
 }
 
 .hotel-search-controls-button {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   padding: 0;
   width: 38px;
   height: 38px;
   border: none;
   background-color: var(--basic-bg);
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.calendar-button {
-  background-image: url("../img/icons/calendar.svg");
 }
 
 .hotel-search-controls-button:hover {
@@ -494,16 +540,24 @@ img {
   border: 2px solid var(--input-hover);
 }
 
-.hotel-search-controls-button:focus {
-  background-color: var(--basic-bg);
-  border: 2px solid var(--input-focus);
-  /* outline: none; */
+.hotel-search-controls-button:hover svg,
+.hotel-search-controls-button:focus svg {
+  fill: var(--basic-black);
+}
+
+.hotel-search-controls-button:active svg {
+  fill: var(--light-blue);
 }
 
 .hotel-search-submit-button {
   width: 100%;
   margin-top: 55px;
   padding: 16px;
+}
+/* Map  */
+
+.section-map {
+  height: 594px; /* без заданной высоты снизу от картинки появляются лишние 5px белой полоской - откуда не поняла */
 }
 
 /* Hotel Filters */
@@ -573,7 +627,9 @@ img {
 
 /* .filters-price-wrap .filters-input {
   
-} */
+} 
+
+переименовать filters-price-input?? */
 
 .filters-input {
   width: 157px;
@@ -673,6 +729,7 @@ img {
 
 .sorting-direction-link {
   display: inline-block;
+  vertical-align: middle;
   width: 11px;
   height: 10px;
 }
@@ -772,10 +829,19 @@ img {
 
 .main-footer {
   display: grid;
-  grid-template-columns: 400px 400px 400px;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  grid-template-columns: 1fr 380px 1fr;
+  padding: 18px 60px 20px;
+  padding-bottom: 20px;
   align-items: center;
+  min-height: 120px;
+}
+
+.main-footer-index {
+  position: relative;
+  margin-top: -120px;
+  background-color: var(--footer-bg);
+  /* outline: 1px solid tomato; */
+  z-index: 1;
 }
 
 .contacts-text {
@@ -800,21 +866,20 @@ img {
   justify-content: center;
 }
 
+.socials-item:not(:last-child) {
+  margin-right: 6px;
+}
+
 .socials-link {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 46px;
   height: 48px;
-  margin-left: 6px;
   background-color: var(--light-blue);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-}
-
-.socails-link:last-child {
-  margin-left: 0;
 }
 
 .socials-link svg {
@@ -838,6 +903,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 5px;
 }
 
 .partner-logo-link {
