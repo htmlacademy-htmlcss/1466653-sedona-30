@@ -10,6 +10,7 @@
   <link rel="preload" href="fonts/PTSans-Bold.woff2" as="font">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/catalog-decoration.css">
   <title>Гостиницы в Седоне</title>
 </head>
 <body class="page-body catalog-page">
@@ -47,17 +48,17 @@
               <ul class="clear-list filters-list">
                 <li class="filters-item">
                   <label class="filters-label"> <!-- ?? разложить отдельно для стилизации? -->
-                    <input class="filters-checkbox" type="checkbox" name="filter-amenities" value="pool" checked> Бассейн
+                    <input class="filters-checkbox visually-hidden" type="checkbox" name="filter-amenities" value="pool" checked> Бассейн
                   </label>
                 </li>
                 <li class="filters-item">
                   <label class="filters-label">
-                    <input class="filters-checkbox" type="checkbox" name="filter-amenities" value="parking"> Парковка
+                    <input class="filters-checkbox visually-hidden" type="checkbox" name="filter-amenities" value="parking"> Парковка
                   </label>
                 </li>
                 <li class="filters-item">
                   <label class="filters-label">
-                    <input class="filters-checkbox" type="checkbox" name="filter-amenities" value="wi-fi" disabled> Wi-Fi
+                    <input class="filters-checkbox visually-hidden" type="checkbox" name="filter-amenities" value="wi-fi" disabled> Wi-Fi
                   </label>
                 </li>
               </ul>
@@ -68,17 +69,17 @@
               <ul class="clear-list filters-list">
                 <li class="filters-item">
                   <label class="filters-label">
-                    <input class="filters-checkbox" type="checkbox" name="filter-accomodation" value="hotel" checked> Гостиница
+                    <input class="filters-checkbox visually-hidden" type="checkbox" name="filter-accomodation" value="hotel" checked> Гостиница
                   </label>
                 </li>
                 <li class="filters-item">
                   <label class="filters-label">
-                    <input class="filters-checkbox" type="checkbox" name="filter-accomodation" value="motel" checked> Мотель
+                    <input class="filters-checkbox visually-hidden" type="checkbox" name="filter-accomodation" value="motel" checked> Мотель
                   </label>
                 </li>
                 <li class="filters-item">
                   <label class="filters-label">
-                    <input class="filters-checkbox" type="checkbox" name="filter-accomodation" value="aparts" checked> Апартаменты
+                    <input class="filters-checkbox visually-hidden" type="checkbox" name="filter-accomodation" value="aparts" checked> Апартаменты
                   </label>
                 </li>
               </ul>
@@ -88,8 +89,8 @@
               <fieldset class="filters-fieldset">
                 <legend class="filters-legend">Стоимость в сутки (р):</legend>
                 <div class="filters-price-wrap">
-                  <input class="filters-input" type="number" name="filter-price" placeholder="от 0" min="0" max="3000">
-                  <input class="filters-input" type="number" name="filter-price" placeholder="до 3000" min="0" max="3000">
+                  <input class="filters-price-input" type="number" name="filter-price" placeholder="от 0" min="0" max="3000">
+                  <input class="filters-price-input" type="number" name="filter-price" placeholder="до 3000" min="0" max="3000">
                 </div>
                 <div></div> <!--бегунок-->
               </fieldset>
@@ -196,7 +197,7 @@
         <p class="contacts-text">#visitsedona</p>
         <p class="contacts-text tel-link">
           тел: 
-          <a href="tel:+74956660166">+7 (495) 666-01-66</a>
+          <a href="tel:+74956660166">+7(495) 666-01-66</a>
         </p>
       </section>
 
