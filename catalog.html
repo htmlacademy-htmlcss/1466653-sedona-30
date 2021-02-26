@@ -10,7 +10,6 @@
   <link rel="preload" href="fonts/PTSans-Bold.woff2" as="font">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/catalog-decoration.css">
   <title>Гостиницы в Седоне</title>
 </head>
 <body class="page-body catalog-page">
@@ -41,61 +40,72 @@
       <h1 class="visually-hidden">Найти жилье в Седоне</h1>
       <section class="filters-section">
         <h2 class="visually-hidden">Параметры поиска жилья</h2>
-        <form action="https://echo.htmlacademy.ru/" method="GET">
-          <div class="filters-form-wrap">
+        <form class="filters-form-wrap" action="https://echo.htmlacademy.ru/" method="GET">
+          <fieldset class="filters-fieldset">
+            <legend class="filters-legend">Инфраструктура</legend>
+            <ul class="clear-list filters-list">
+              <li class="filters-item">
+                <label class="filters-label"> <!-- ?? разложить отдельно для стилизации? -->
+                  <input class="visually-hidden" type="checkbox" name="filter-amenities" value="pool" checked>
+                  <span class="filters-checkbox">Бассейн</span>
+                </label>
+              </li>
+              <li class="filters-item">
+                <label class="filters-label">
+                  <input class="visually-hidden" type="checkbox" name="filter-amenities" value="parking">
+                  <span class="filters-checkbox">Парковка</span>
+                </label>
+              </li>
+              <li class="filters-item">
+                <label class="filters-label">
+                  <input class="visually-hidden" type="checkbox" name="filter-amenities" value="wi-fi"> 
+                  <span class="filters-checkbox">Wi-Fi</span>
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset class="filters-fieldset">
+            <legend class="filters-legend">Тип жилья</legend>
+            <ul class="clear-list filters-list">
+              <li class="filters-item">
+                <label class="filters-label">
+                  <input class="visually-hidden" type="checkbox" name="filter-accomodation" value="hotel" checked>
+                  <span class="filters-checkbox">Гостиница</span>
+                </label>
+              </li>
+              <li class="filters-item">
+                <label class="filters-label">
+                  <input class="visually-hidden" type="checkbox" name="filter-accomodation" value="motel" checked>
+                  <span class="filters-checkbox">Мотель</span>
+                </label>
+              </li>
+              <li class="filters-item">
+                <label class="filters-label">
+                  <input class="visually-hidden" type="checkbox" name="filter-accomodation" value="aparts" checked>
+                  <span class="filters-checkbox">Апартаменты</span>
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <div class="filters-col-wrap">
             <fieldset class="filters-fieldset">
-              <legend class="filters-legend">Инфраструктура</legend>
-              <ul class="clear-list filters-list">
-                <li class="filters-item">
-                  <label class="filters-label"> <!-- ?? разложить отдельно для стилизации? -->
-                    <input class="filters-checkbox visually-hidden" type="checkbox" name="filter-amenities" value="pool" checked> Бассейн
-                  </label>
-                </li>
-                <li class="filters-item">
-                  <label class="filters-label">
-                    <input class="filters-checkbox visually-hidden" type="checkbox" name="filter-amenities" value="parking"> Парковка
-                  </label>
-                </li>
-                <li class="filters-item">
-                  <label class="filters-label">
-                    <input class="filters-checkbox visually-hidden" type="checkbox" name="filter-amenities" value="wi-fi" disabled> Wi-Fi
-                  </label>
-                </li>
-              </ul>
-            </fieldset>
-  
-            <fieldset class="filters-fieldset">
-              <legend class="filters-legend">Тип жилья</legend>
-              <ul class="clear-list filters-list">
-                <li class="filters-item">
-                  <label class="filters-label">
-                    <input class="filters-checkbox visually-hidden" type="checkbox" name="filter-accomodation" value="hotel" checked> Гостиница
-                  </label>
-                </li>
-                <li class="filters-item">
-                  <label class="filters-label">
-                    <input class="filters-checkbox visually-hidden" type="checkbox" name="filter-accomodation" value="motel" checked> Мотель
-                  </label>
-                </li>
-                <li class="filters-item">
-                  <label class="filters-label">
-                    <input class="filters-checkbox visually-hidden" type="checkbox" name="filter-accomodation" value="aparts" checked> Апартаменты
-                  </label>
-                </li>
-              </ul>
-            </fieldset>
-  
-            <div class="filters-col-wrap">
-              <fieldset class="filters-fieldset">
-                <legend class="filters-legend">Стоимость в сутки (р):</legend>
-                <div class="filters-price-wrap">
-                  <input class="filters-price-input" type="number" name="filter-price" placeholder="от 0" min="0" max="3000">
-                  <input class="filters-price-input" type="number" name="filter-price" placeholder="до 3000" min="0" max="3000">
+              <legend class="filters-legend">Стоимость в сутки (р):</legend>
+              <div class="filters-price-wrap">
+                <input class="filters-price-input" type="number" name="filter-price" placeholder="от 0" min="0" max="3000">
+                <input class="filters-price-input" type="number" name="filter-price" placeholder="до 3000" min="0" max="3000">
+              </div>
+              <!--бегунок-->
+              <div class="filters-price-range-wrap">
+                <div class="filters-price-scale">
+                  <div class="filters-price-bar"></div>
                 </div>
-                <div></div> <!--бегунок-->
-              </fieldset>
-              <button class="filters-submit-button" type="submit">Показать</button>
-            </div>
+                <div class="filters-price-toggle toggle-min" tabindex="0"></div>
+                <div class="filters-price-toggle toggle-max" tabindex="0"></div>
+              </div> 
+            </fieldset>
+            <button class="filters-submit-button" type="submit">Показать</button>   
           </div>
         </form>
       </section>
@@ -122,13 +132,13 @@
         </div>
         <div class="sorting-direction-wrap">
           <a class="sorting-direction-link direction-link-up">
-            <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5.5 0L0 10H11L5.5 0Z" fill="#CACACA"/>
+            <svg width="11" height="10" viewBox="0 0 11 10" fill="#CACACA" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.5 0L0 10H11L5.5 0Z" />
             </svg>
           </a><!--сортировать по возрастанию параметра-->
           <a class="sorting-direction-link direction-link-down direction-link-current" href="#">
-            <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5.5 10L0 0H11" fill="#81B3D2"/>
+            <svg width="11" height="10" viewBox="0 0 11 10" fill="#CACACA" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.5 10L0 0H11"/>
             </svg>
           </a><!--сортировать по убыванию-->
         </div>
@@ -141,12 +151,12 @@
             <article class="result-item">
               <h3 class="result-title">Amara Resort & Spa</h3>
               <img src="img/hotels/amara-resort.jpg" width="135" height="90" alt="Фото гостиницы Amara Resort & Spa">
-              <span class="result-stars"></span><!--звездность жилья-->
+              <div class="result-stars result-stars-four"></div><!--звездность жилья-->
               <p class="result-text">
-                Гостиница 
-                <span>от 4000р.</span>
+                <span class="result-category">Гостиница</span>
+                <span>от 4000 р.</span>
               </p>
-              <div class="result-buttons-wrap"> <!--здесь будет флекс-->
+              <div class="result-buttons-wrap">
                 <a class="button button-blue result-link" href="#">Подробнее</a>
                 <button class="button button-brown result-button" type="button">Забронировать</button>
               </div>
@@ -158,10 +168,10 @@
             <article class="result-item">
               <h3 class="result-title">Desert Quail Inn</h3>
               <img src="img/hotels/desert-quail-inn.jpg" width="135" height="90" alt="Фото мотеля Desert Quail Inn">
-              <span class="result-stars"></span><!--звездность жилья-->
+              <span class="result-stars result-stars-three"></span><!--звездность жилья-->
               <p class="result-text">
-                Мотель 
-                <span>от 3000р.</span>
+                <span class="result-category">Мотель</span>
+                <span>от 3000 р.</span>
               </p>
               <div class="result-buttons-wrap">
                 <a class="button button-blue result-link" href="#">Подробнее</a>
@@ -175,10 +185,10 @@
             <article class="result-item">
               <h3 class="result-title">Villas At Poco Diablo</h3>
               <img src="img/hotels/villas-at-poco-diablo.jpg" width="135" height="90" alt="Фото апартаментов Villas At Poco Diablo и прилегающей территории">
-              <span class="result-stars"></span><!--звездность жилья-->
+              <span class="result-stars result-stars-two"></span><!--звездность жилья-->
               <p class="result-text">
-                Апартаменты 
-                <span>от 2000р.</span>
+                <span class="result-category">Апартаменты</span>
+                <span>от 2000 р.</span>
               </p>
               <div class="result-buttons-wrap">
                 <a class="button button-blue result-link" href="#">Подробнее</a>
@@ -204,21 +214,21 @@
       <section>
         <h2 class="visually-hidden">Найти в соцсетях</h2>
         <ul class="clear-list socials-list">
-          <li>
+          <li class="socials-item">
             <a class="socials-link" href="#" aria-label="Twitter">
               <svg class="socials-link-twitter" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10.95 1.14409C12.635 0.648089 13.934 1.41409 14.527 2.32309C15.2 2.09209 15.858 1.84209 16.538 1.61509C16.5249 2.30145 16.2117 2.94761 15.681 3.38309C16.366 3.55309 16.985 2.89209 16.985 2.89209C16.816 3.89209 15.979 4.68009 15.422 4.91609C15.191 11.6661 12.247 16.1331 5.34498 15.9981H4.89898C4.48898 15.9981 0.734977 15.5381 0.000976562 14.1111C2.27198 14.3071 3.89398 13.6891 4.69398 12.9341C3.73398 12.6341 2.01498 12.4571 1.71498 9.98409C2.06398 10.0901 2.27898 10.2121 2.90498 10.1031C1.70498 9.24709 0.373977 8.53009 0.447977 6.33009C0.732977 6.65809 1.51498 6.86609 1.78798 6.80209C1.08498 6.56109 -0.182023 3.44209 0.893977 1.85009C2.71198 3.70409 4.62898 5.45609 8.04598 5.62309C8.25398 3.33009 9.18298 1.79309 10.95 1.14409Z"/>
               </svg>
             </a>
           </li>
-          <li>
+          <li class="socials-item">
             <a class="socials-link" href="#" aria-label="Facebook">
               <svg class="socials-link-fb" width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 4V0H8C5.79086 0 4 1.79086 4 4V8H0V12H4V22H8V12H12V8H8V4H12Z"/>
                 </svg>
             </a>
           </li>
-          <li>
+          <li class="socials-item">
             <a class="socials-link" href="#" aria-label="YouTube">
               <svg  class="socials-link-youtube" width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M3 0H17C18.65 0 20 1.35 20 3V13C20 14.65 18.65 16 17 16H3C1.35 16 0 14.65 0 13V3C0 1.35 1.35 0 3 0ZM6.027 4.002V11.998L15.014 8L6.027 4.002Z"/>
