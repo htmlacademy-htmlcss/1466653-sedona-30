@@ -626,7 +626,25 @@ img {
   position: relative;
   padding-left: 40px;
   font-weight: 400;
+  cursor: pointer;
 }
+
+/* 
+баловалась для доступности: по стайлгайду при фокусе c клавиатуры непонятно на каком из чекбоксов находится курсор, поэтому попробовала добавить легкий эффект нажатия . 
+
+.filters-label input:focus + .filters-checkbox::before,
+.filters-label input:focus + .filters-checkbox::after {
+  animation: down .3s ease-in;
+}
+
+@keyframes down {
+  50% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+} */
 
 .filters-checkbox::before,
 .filters-checkbox::after {
@@ -672,6 +690,7 @@ img {
   display: flex;
   justify-content: space-between;
   border: 2px solid var(--basic-white);
+  border-radius: 2px;
 }
 
 .filters-price-wrap::after {
@@ -686,7 +705,7 @@ img {
 }
 
 .filters-price-input {
-  width: 157px;
+  width: 156px;
   padding-top: 8px;
   padding-bottom: 8px;
   text-align: center;
@@ -715,6 +734,7 @@ img {
   width: 100%;
   height: 2px;
   background-color: var(--text-active-light);
+  cursor: pointer;
 }
 
 .filters-price-bar {
@@ -735,6 +755,7 @@ img {
   box-shadow: 0 2px 0 0 var(--toggle-shadow-inner);
   filter: drop-shadow(0 4px 4px var(--toggle-shadow-outer));
   transition: transform ease-in 0.2s;
+  cursor: pointer;
 }
 
 .toggle-min {
@@ -748,6 +769,7 @@ img {
 .filters-price-toggle:hover,
 .filters-price-toggle:focus {
   transform: scale(1.2); 
+  outline: none;
 }
 
 .filters-submit-button {
@@ -757,6 +779,7 @@ img {
   text-transform: uppercase;
   background-color: transparent;
   border: 2px solid var(--basic-white);
+  border-radius: 2px;
 }
 
 .filters-submit-button:hover,
@@ -764,6 +787,7 @@ img {
 .filters-submit-button:active {
   color: var(--basic-black);
   background-color: var(--basic-white);
+  outline: none;
 }
 
 /* Hotels sorting */
@@ -846,6 +870,15 @@ img {
 .sorting-direction-link svg {
   fill: var(--dir-arrow);
  }
+
+.sorting-direction-link:hover svg,
+.sorting-direction-link:focus svg {
+  fill: var(--basic-black);
+}
+
+.sorting-direction-link:active svg {
+  fill: var(--light-blue);
+}
 
 .direction-link-current svg {
   fill: var(--light-blue);
@@ -1027,6 +1060,7 @@ img {
 .socials-link:hover,
 .socials-link:focus {
   background-color: var(--medium-blue);
+  outline: none;
 }
 
 .socials-link:active {
@@ -1052,11 +1086,11 @@ img {
   fill: var(--partner-logo);
 }
 
-.partner-logo:hover,
-.partner-logo:focus {
+.partner-logo-link:hover svg,
+.partner-logo-link:focus svg{
   fill: var(--light-blue);
 }
 
-.partner-logo:active {
+.partner-logo-link:active svg{
   fill: var(--partner-logo-active);
 }
