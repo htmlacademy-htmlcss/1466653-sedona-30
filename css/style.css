@@ -597,9 +597,10 @@ img {
 }
 
 .filters-col-wrap {
-  /* display: flex;
-  flex-direction: column; */
+  display: flex;
+  flex-direction: column;
   margin-left: auto;
+  max-width: 320px;
 }
 
 .filters-col-wrap .filters-fieldset {
@@ -784,7 +785,8 @@ img {
 }
 
 .filters-submit-button {
-  margin: 0 auto;
+  align-self: flex-start;
+  margin-left: 85px; 
   padding: 8px 33px;
   color: var(--basic-white);
   text-transform: uppercase;
@@ -805,7 +807,8 @@ img {
 
 .sorting-section {
   display: grid;
-  grid-template-columns: 165px 1fr min-content;
+  grid-template-columns: 135px 1fr min-content;
+  column-gap: 30px;
   align-items: flex-start;
   padding: 30px 72px;
   text-align: left;
@@ -815,7 +818,7 @@ img {
 .sorting-wrap {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-self: center;
 }
 
 .sorting-text {
@@ -844,19 +847,20 @@ img {
 
 .sorting-link {
   display: inline-block;
-  vertical-align: top;
+  vertical-align: middle;
+  max-width: 90px;
   color: var(--text-active-grey);
-  border-bottom: 1px dashed transparent;
+  border-bottom: 1px dashed var(--light-blue);
 }
 
 .sorting-link-selected {
   color: var(--light-blue);
+  border-bottom-color: transparent;
 }
 
 .sorting-link:hover,
 .sorting-link:focus {
   color: var(--light-blue);
-  border-bottom-color: var(--light-blue);
 }
 
 .sorting-link:active {
