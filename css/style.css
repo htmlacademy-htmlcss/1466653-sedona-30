@@ -506,6 +506,10 @@ img {
   max-width: 100px;
 }
 
+.hotel-search-children .hotel-search-label {
+  max-width: 60px;
+}
+
 .hotel-search-input {
   display: inline-block;
   vertical-align: middle;
