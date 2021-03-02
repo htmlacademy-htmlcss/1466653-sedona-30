@@ -600,7 +600,7 @@ img {
   display: flex;
   flex-direction: column;
   margin-left: auto;
-  max-width: 320px;
+  width: 320px;
 }
 
 .filters-col-wrap .filters-fieldset {
@@ -724,6 +724,8 @@ img {
   color: inherit;
   background-color: transparent;
   border: none;
+  /* -webkit-appearance: textfield;
+  appearance: textfield; */
 } 
 
 .filters-price-input::placeholder {
