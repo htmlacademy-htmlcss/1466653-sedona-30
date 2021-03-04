@@ -604,7 +604,7 @@ img {
   display: flex;
   flex-direction: column;
   margin-left: auto;
-  width: 320px;
+  width: 318px;
 }
 
 .filters-col-wrap .filters-fieldset {
@@ -638,23 +638,6 @@ img {
   font-weight: 400;
   cursor: pointer;
 }
-
-/* 
-баловалась для доступности: по стайлгайду при фокусе c клавиатуры непонятно на каком из чекбоксов находится курсор, поэтому попробовала добавить легкий эффект нажатия . 
-
-.filters-label input:focus + .filters-checkbox::before,
-.filters-label input:focus + .filters-checkbox::after {
-  animation: down .3s ease-in;
-}
-
-@keyframes down {
-  50% {
-    transform: translateY(2px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-} */
 
 .filters-checkbox {
   position: relative;
@@ -857,7 +840,7 @@ img {
   vertical-align: middle;
   max-width: 90px;
   color: var(--text-active-grey);
-  border-bottom: 1px dashed var(--light-blue);
+  border-bottom: 1px dotted var(--light-blue);
 }
 
 .sorting-link-selected {
