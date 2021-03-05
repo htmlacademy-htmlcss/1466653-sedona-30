@@ -455,8 +455,12 @@ img {
   overflow: hidden;
 }
 
-.section-map img {
+/* .section-map img {
   display: block;
+} */
+
+.sedona-google-map {
+  border: none;
 }
 
 /* Hotel search form */
